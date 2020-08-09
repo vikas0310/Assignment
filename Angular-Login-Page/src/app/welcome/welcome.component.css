@@ -1,0 +1,24 @@
+
+.alignContainer {
+    border: 1px solid #eeeeee;
+    border-radius: 2px;
+    position: relative;
+    top: 2em;
+}
+
+form {
+    padding: 25px 25px 25px 25px;
+}
+
+table {
+    width: 100%;
+    margin-top: 1em;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+    padding: 0px 15px 0px 15px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border: 1px solid #aaa !important;
+    text-align: center !important;
+}
