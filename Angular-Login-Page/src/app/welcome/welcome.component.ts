@@ -16,7 +16,6 @@ export class WelcomeComponent implements OnInit {
   ];
 
   tableCellData: any = [];
-  // dtOptions: DataTables.Settings = {};
   dataSource = new MatTableDataSource(this.tableCellData);
   @ViewChild(MatSort) sort: MatSort;
   userDetails: FormGroup;
@@ -38,14 +37,6 @@ export class WelcomeComponent implements OnInit {
       companyName: [''],
       comments: ['']
     });
-/*
-    setTimeout(() => {
-      this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
-    }, 100); */
     // retriveUserDetails() used to retrive userServiceDetails
     this.retriveUserDetails();
 
@@ -83,21 +74,11 @@ export class WelcomeComponent implements OnInit {
   }
 
   filterData(event: any) {
-    console.log(event);
-    // const value = event.target.value;
     const value = (event.target as HTMLInputElement).value;
     this.dataSource.filter = value.trim().toLowerCase();
-    /* if (value.startsWith('A') || value.startsWith('B') || value.startsWith('C')) {
-      return this.dataSource.filter = value.trim().toLowerCase();
-      alert('value is valid' + value);
-    } */
   }
 
   sortData(sort: Sort) {
-    /* if (!sort.active || sort.direction === '') {
-      return this.dataSource.data;
-    }
-     */
     this.dataSource.data = this.dataSource.data.sort((a: any, b: any) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
@@ -110,8 +91,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   compare(a: number | string, b: number | string, isAsc: boolean) {
-    // return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-
     const direction = isAsc ? 1 : -1;
     if (a < b) {
       return -1 * direction;
